@@ -1,0 +1,16 @@
+---
+tcp:
+  routers:
+    to-srv-tcp:
+      entryPoints:
+        - ssh
+      service: srv-tcp
+      rule: HostSNI(`knh.cloud`)
+      tls: {}
+
+    to-postgres-tcp:
+      entryPoints:
+        - postgres
+      service: postgres-tcp
+      rule: HostSNI(`pg.knh.cloud`)
+      tls: {}

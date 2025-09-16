@@ -1,0 +1,12 @@
+---
+http:
+  serversTransports:
+    secure-conn:
+      serverName: knh.cloud
+      certificates:
+        - certFile: /cert/mtls/barneyRubble.cert
+          keyFile: /cert/mtls/barneyRubble.key
+      # rootCAs:
+      #   - /cert/rootCA/RootCA.crt
+      # spiffe:
+      #   trustDomain: spiffe://knh.cloud

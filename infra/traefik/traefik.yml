@@ -1,0 +1,39 @@
+## scp traefik/traefik.yml root@192.168.2.91:/share/infra/traefik
+## scp traefik/traefik.yml sihuan@192.168.2.91:~
+## scp -O -P 2222 traefik/config/static/traefik.yml sihuan@192.168.2.72:/share/dockume/traefik
+## http://localhost:8080/api/rawdata
+---
+entryPoints:
+  web:
+    address: :80
+    http:
+      redirections:
+        entryPoint:
+          to: websecure
+  websecure:
+    address: :443
+  ssh:
+    address: :22
+  postgres:
+    address: :5432
+
+api:
+  dashboard: true
+  insecure: true
+
+global:
+  checkNewVersion: false
+  sendAnonymousUsage: false
+
+providers:
+  docker:
+    network: traefik-public
+    exposedByDefault: false
+  file:
+    directory: /etc/traefik/dynamic
+    watch: true
+
+accessLog: {}
+
+log:
+  level: DEBUG # or ERROR # set to INFO for production

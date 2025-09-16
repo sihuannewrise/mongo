@@ -1,0 +1,36 @@
+---
+services:
+  mongo:
+    image: mongo:8.0.13
+    container_name: mongodb
+    hostname: mongodb
+    restart: unless-stopped
+    ports:
+      - 27017:27017
+    command: 'mongod --config /data/configdb/mongod.conf'
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - configdb:/data/configdb
+      - data:/data/db
+    env_file: stack.env
+
+  # mongo-express:
+  #   image: mongo-express
+  #   restart: always
+  #   ports:
+  #     - 8081:8081
+  #   env_file: stack.env
+
+volumes:
+  configdb:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /share/db/mongo/configdb
+  data:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /share/db/mongo/_data

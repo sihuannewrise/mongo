@@ -1,0 +1,25 @@
+http:
+  middlewares:
+    auth:
+      basicAuth:
+        usersFile: /etc/traefik/usersfile
+
+    auth_kc_openid:
+      plugin:
+        keycloakopenid:
+          ClientID: traefik_auth
+          ClientSecret: kNtmOO0WoxGShCnMJA8GzNl3Z3gCQzd3
+          KeycloakRealm: knhcloud
+          KeycloakURL: https://auth.knh.cloud:8443
+          Scope: openid
+          TokenCookieName: AUTH_SESSION_ID
+          UseAuthHeader: true
+          UserClaimName: ssl-client-cert
+          UserHeaderName: X-Forwarded-User
+
+    faAuthelia:
+      forwardAuth:
+        address: http://authelia:9091/api/authz/forward-auth
+        trustForwardHeader: true
+        authResponseHeaders: 'Remote-User,Remote-Groups,Remote-Name,Remote-Email'
+
