@@ -42,7 +42,7 @@ log:
   level: DEBUG # or ERROR # set to INFO for production
 
 certificatesResolvers:
-  myresolver:
+  letsencrypt:
     acme:
       email: sihuannewrise@gmail.com
       storage: /etc/traefik/acme.json
