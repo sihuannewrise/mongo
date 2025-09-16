@@ -11,10 +11,14 @@ entryPoints:
           to: websecure
   websecure:
     address: :443
-  # ssh:
-  #   address: :22
-  # postgres:
-  #   address: :5432
+    http:
+      tls:
+        certResolver: letsencrypt
+        domains:
+          - main: almeling.ru
+            sans:
+              - traefik.almeling.ru
+              - portainer.almeling.ru
 
 api:
   dashboard: true
@@ -36,3 +40,11 @@ accessLog: {}
 
 log:
   level: DEBUG # or ERROR # set to INFO for production
+
+certificatesResolvers:
+  myresolver:
+    acme:
+      email: sihuannewrise@gmail.com
+      storage: /etc/traefik/acme.json
+      httpChallenge:
+        entryPoint: web

@@ -3,10 +3,10 @@
 http:
   routers:
     to-web:
+      service: traefik
+      rule: Host(`almeling.ru`)
       entryPoints:
         - websecure
-      rule: Host(`almeling.ru`)
-      service: web
 
     to-portainer:
       service: portainer
