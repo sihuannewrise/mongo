@@ -1,7 +1,8 @@
 ---
 services:
   mongo:
-    image: mongo:8.0.13
+    # image: mongo:8.0.13
+    image: mongo:latest
     container_name: mongodb
     hostname: mongodb
     restart: unless-stopped
@@ -13,6 +14,8 @@ services:
       - configdb:/data/configdb
       - data:/data/db
     env_file: stack.env
+    networks:
+      traefik-public:
 
   # mongo-express:
   #   image: mongo-express
@@ -34,3 +37,7 @@ volumes:
       type: none
       o: bind
       device: /share/db/mongo/_data
+
+networks:
+  traefik-public:
+    external: true

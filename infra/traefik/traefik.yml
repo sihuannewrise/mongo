@@ -11,10 +11,10 @@ entryPoints:
           to: websecure
   websecure:
     address: :443
-  ssh:
-    address: :22
-  postgres:
-    address: :5432
+  # ssh:
+  #   address: :22
+  # postgres:
+  #   address: :5432
 
 api:
   dashboard: true
