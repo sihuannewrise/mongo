@@ -1,2 +1,2 @@
-## scp -O -P 2222 traefik/config/usersfile sihuan@192.168.2.72:/share/dockume/infra/traefik
+## scp infra/traefik/usersfile root@almeling.ru:/share/infra/traefik
 sihuan:$2a$12$hSuqGSo/wIYE8.U5GXqoXuonRkzwMj7CocubTSX9LE4/bc1HKtgIi

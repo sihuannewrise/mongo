@@ -1,0 +1,23 @@
+## scp traefik/dynamic/{11,2,3}*.yml root@almeling.ru:/share/infra/traefik/dynamic
+---
+http:
+  routers:
+    to-web:
+      entryPoints:
+        - websecure
+      rule: Host(`almeling.ru`)
+      service: web
+
+    to-portainer:
+      service: portainer
+      rule: Host(`portainer.almeling.ru`)
+      entryPoints:
+        - websecure
+
+    to-traefik:
+      service: traefik
+      rule: Host(`traefik.almeling.ru`)
+      entryPoints:
+        - websecure
+      middlewares:
+        - auth

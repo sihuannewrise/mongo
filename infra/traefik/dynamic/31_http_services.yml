@@ -1,0 +1,17 @@
+---
+http:
+  services:
+    web:
+      loadBalancer:
+        servers:
+          - url: http://whoami:80
+
+    portainer:
+      loadBalancer:
+        servers:
+          - url: http://portainer:9000
+
+    traefik:
+      loadBalancer:
+        servers:
+          - url: http://traefik:8080

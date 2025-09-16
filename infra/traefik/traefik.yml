@@ -1,4 +1,5 @@
-## scp -O -P 2222 infra/traefik/traefuk.yml root@almeling.ru:/share/infra/traefik
+## path to place the file
+## scp infra/traefik/traefik.yml root@almeling.ru:/share/infra/traefik
 ## http://localhost:8080/api/rawdata
 ---
 entryPoints:
