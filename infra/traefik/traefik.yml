@@ -1,6 +1,4 @@
-## scp traefik/traefik.yml root@192.168.2.91:/share/infra/traefik
-## scp traefik/traefik.yml sihuan@192.168.2.91:~
-## scp -O -P 2222 traefik/config/static/traefik.yml sihuan@192.168.2.72:/share/dockume/traefik
+## scp -O -P 2222 infra/traefik/traefuk.yml root@almeling.ru:/share/infra/traefik
 ## http://localhost:8080/api/rawdata
 ---
 entryPoints:
