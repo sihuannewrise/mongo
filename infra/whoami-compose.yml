@@ -1,0 +1,12 @@
+---
+services:
+  whoami:
+    image: traefik/whoami
+    container_name: whoami
+    restart: unless-stopped
+    networks:
+      traefik-public:
+
+networks:
+  traefik-public:
+    external: true

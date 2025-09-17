@@ -8,32 +8,18 @@ services:
     command: 'mongod --config /data/configdb/mongod.conf'
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - configdb:/data/configdb
-      - data:/data/db
+      - /share/db/mongo/configdb:/data/configdb
+      - /share/db/mongo/_data:/data/db
     env_file: stack.env
     networks:
       traefik-public:
 
   mongo-express:
-    image: mongo-express
+    image: mongo-express:1.0.2
     restart: always
     # ports:
     #   - 8081:8081
     env_file: stack.env
-
-volumes:
-  configdb:
-    driver: local
-    driver_opts:
-      type: none
-      o: bind
-      device: /share/db/mongo/configdb
-  data:
-    driver: local
-    driver_opts:
-      type: none
-      o: bind
-      device: /share/db/mongo/_data
 
 networks:
   traefik-public:

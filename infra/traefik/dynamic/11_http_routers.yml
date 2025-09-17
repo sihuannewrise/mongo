@@ -8,12 +8,16 @@ http:
       rule: Host(`almeling.ru`)
       entryPoints:
         - websecure
+      tls:
+        certResolver: letsencrypt
 
     to-portainer:
       service: portainer
       rule: Host(`portainer.almeling.ru`)
       entryPoints:
         - websecure
+      tls:
+        certResolver: letsencrypt
 
     to-traefik:
       service: traefik
@@ -22,9 +26,13 @@ http:
         - websecure
       middlewares:
         - auth
+      tls:
+        certResolver: letsencrypt
 
     to-mongo:
       service: mongo
       rule: Host(`mongo.almeling.ru`)
       entryPoints:
         - websecure
+      tls:
+        certResolver: letsencrypt

@@ -11,15 +11,15 @@ entryPoints:
           to: websecure
   websecure:
     address: :443
-    http:
-      tls:
-        certResolver: letsencrypt
-        domains:
-          - main: almeling.ru
-            sans:
-              - traefik.almeling.ru
-              - portainer.almeling.ru
-              - mongo.almeling.ru
+    # http:
+    #   tls:
+    #     certResolver: letsencrypt
+        # domains:
+        #   - main: almeling.ru
+        #     sans:
+        #       - traefik.almeling.ru
+        #       - portainer.almeling.ru
+        #       - mongo.almeling.ru
 
 api:
   dashboard: true
