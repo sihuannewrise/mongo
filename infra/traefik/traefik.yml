@@ -19,6 +19,7 @@ entryPoints:
             sans:
               - traefik.almeling.ru
               - portainer.almeling.ru
+              - mongo.almeling.ru
 
 api:
   dashboard: true

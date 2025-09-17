@@ -15,3 +15,8 @@ http:
       loadBalancer:
         servers:
           - url: http://traefik:8080
+
+    mongo:
+      loadBalancer:
+        servers:
+          - url: http://mongo-express:8081

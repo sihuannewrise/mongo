@@ -22,3 +22,9 @@ http:
         - websecure
       middlewares:
         - auth
+
+    to-mongo:
+      service: mongo
+      rule: Host(`mongo.almeling.ru`)
+      entryPoints:
+        - websecure
