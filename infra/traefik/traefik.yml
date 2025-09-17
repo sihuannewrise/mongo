@@ -3,6 +3,8 @@
 ## http://localhost:8080/api/rawdata
 ---
 entryPoints:
+  ssh:
+    address: :2222
   web:
     address: :80
     http:

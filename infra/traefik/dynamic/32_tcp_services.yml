@@ -1,12 +1,7 @@
 ---
 tcp:
   services:
-    srv-tcp:
+    i7srv:
       loadBalancer:
         servers:
-          - address: 192.168.2.91:22
-
-    postgres-tcp:
-      loadBalancer:
-        servers:
-          - address: 192.168.2.72:5432
+          - address: 192.168.101.234:22
