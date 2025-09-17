@@ -6,7 +6,7 @@ services:
     # ports:
     #   - 9443:9443
     restart: always
-    # command: --sslcert /certs/internal-ips.cert --sslkey /certs/internal-ips.key
+    # command: --sslcert /certs/storage/internal-ips.cert --sslkey /certs/storage/internal-ips.key
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /var/run/docker.sock:/var/run/docker.sock
