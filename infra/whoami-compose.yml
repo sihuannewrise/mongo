@@ -2,8 +2,10 @@
 services:
   whoami:
     image: traefik/whoami
-    container_name: whoami
+    hostname: whoami
     restart: unless-stopped
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
     networks:
       traefik-public:
 
