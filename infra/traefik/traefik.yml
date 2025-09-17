@@ -3,8 +3,6 @@
 ## http://localhost:8080/api/rawdata
 ---
 entryPoints:
-  ssh:
-    address: :2222
   web:
     address: :80
     http:
@@ -31,9 +29,6 @@ global:
   sendAnonymousUsage: false
 
 providers:
-  docker:
-    network: traefik-public
-    exposedByDefault: false
   file:
     directory: /etc/traefik/dynamic
     watch: true

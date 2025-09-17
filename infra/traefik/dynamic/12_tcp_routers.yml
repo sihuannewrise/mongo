@@ -2,7 +2,7 @@
 tcp:
   routers:
     to-i7srv:
-      entryPoints:
-        - ssh
       service: i7srv
       rule: HostSNI(`*`)
+      entryPoints:
+        - websecure

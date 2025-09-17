@@ -4,4 +4,4 @@ tcp:
     i7srv:
       loadBalancer:
         servers:
-          - address: 192.168.101.234:22
+          - address: i7srv:22
