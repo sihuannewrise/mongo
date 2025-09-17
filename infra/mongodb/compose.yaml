@@ -2,13 +2,14 @@
 services:
   mongo:
     image: mongo:8.0.13
+    container_name: mongo
     restart: unless-stopped
     # ports:
     #   - 27017:27017
-    command: 'mongod --config /data/configdb/mongod.conf'
+    # command: 'mongod --config /data/configdb/mongod.conf'
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - /share/db/mongo/configdb:/data/configdb
+      # - /share/db/mongo/configdb:/data/configdb
       - /share/db/mongo/_data:/data/db
     env_file: stack.env
     networks:
@@ -16,10 +17,17 @@ services:
 
   mongo-express:
     image: mongo-express:1.0.2
+    depends_on:
+      - mongo
     restart: always
     # ports:
     #   - 8081:8081
     env_file: stack.env
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /share/db/mongo/_data:/data/db
+    networks:
+      traefik-public:
 
 networks:
   traefik-public:
