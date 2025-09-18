@@ -3,15 +3,13 @@ services:
   portainer:
     image: portainer/portainer-ee:2.33.1
     container_name: portainer
-    # ports:
-    #   - 9443:9443
     restart: always
     # command: --sslcert /certs/storage/internal-ips.cert --sslkey /certs/storage/internal-ips.key
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /var/run/docker.sock:/var/run/docker.sock
       - /share/infra/portainer/data:/data
-      - /share/infra/cert/storage:/certs
+      # - /share/infra/cert/storage:/certs
     networks:
       - traefik-public
 

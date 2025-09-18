@@ -22,8 +22,6 @@ services:
     depends_on:
       - mongodb
     restart: always
-    # ports:
-    #   - 8081:8081
     env_file: stack.env
     volumes:
       - /etc/localtime:/etc/localtime:ro
