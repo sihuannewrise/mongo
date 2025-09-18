@@ -25,7 +25,7 @@ entryPoints:
 
 api:
   dashboard: true
-  insecure: true
+  insecure: true # Don't do that in production
 
 global:
   checkNewVersion: false
