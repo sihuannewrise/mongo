@@ -6,3 +6,14 @@ tcp:
       rule: HostSNI(`*`)
       entryPoints:
         - websecure
+
+    to-mongodb:
+      service: mongodb
+      rule: HostSNI(`almeling.ru`)
+      entryPoints:
+        - mongodb
+      tls:
+        certResolver: letsencrypt
+        domains:
+          - main: almeling.ru
+
