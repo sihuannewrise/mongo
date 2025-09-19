@@ -12,7 +12,6 @@ services:
     ports:
       - 80:80
       - 443:443
-      - 27017:27017
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /share/infra/traefik:/etc/traefik

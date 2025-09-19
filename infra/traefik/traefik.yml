@@ -3,8 +3,6 @@
 ## http://localhost:8080/api/rawdata
 ---
 entryPoints:
-  mongodb:
-    address: :27017
   web:
     address: :80
     http:
@@ -13,15 +11,6 @@ entryPoints:
           to: websecure
   websecure:
     address: :443
-    # http:
-    #   tls:
-    #     certResolver: letsencrypt
-        # domains:
-        #   - main: almeling.ru
-        #     sans:
-        #       - traefik.almeling.ru
-        #       - portainer.almeling.ru
-        #       - mongo.almeling.ru
 
 api:
   dashboard: true

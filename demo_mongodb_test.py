@@ -1,12 +1,13 @@
 import pymongo
 
-# myclient = pymongo.MongoClient("mongodb://localhost:27017/")
-myclient = pymongo.MongoClient("mongodb://mongodbuser:aw3se4dr5@mongodb:27017/")
+myclient = pymongo.MongoClient("mongodb://mongodbuser:aw3se4dr5@mongodb.almeling.ru:433/")
 
 mydb = myclient["mydatabase"]
 mycol = mydb["customers"]
 
-mydict = { "name": "John", "address": "Highway 37" }
+# mydict = { "name": "Matwey", "address": "Highlands 23" }
 
-x = mycol.insert_one(mydict)
-print(x.inserted_id)
+# x = mycol.insert_one(mydict)
+# print(x.inserted_id)
+
+print(mycol)

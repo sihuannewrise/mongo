@@ -36,3 +36,11 @@ http:
         - websecure
       tls:
         certResolver: letsencrypt
+
+    to-mongodb:
+      service: mongodb
+      rule: Host(`mongodb.almeling.ru`)
+      entryPoints:
+        - websecure
+      tls:
+        certResolver: letsencrypt

@@ -20,3 +20,8 @@ http:
       loadBalancer:
         servers:
           - url: http://mongo-express:8081
+
+    mongodb:
+      loadBalancer:
+        servers:
+          - url: http://mongodb:27017
