@@ -5,8 +5,3 @@ tcp:
       loadBalancer:
         servers:
           - address: i7srv:22
-
-    mongodb:
-      loadBalancer:
-        servers:
-          - address: mongodb:27017
