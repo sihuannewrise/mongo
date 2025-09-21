@@ -1,15 +1,16 @@
 ---
 tcp:
   routers:
-    to-i7srv:
-      service: i7srv
-      rule: HostSNI(`*`)
-      entryPoints:
-        - websecure
+    #   to-i7srv:
+    #     service: i7srv
+    #     rule: HostSNI(`*`)
+    #     entryPoints:
+    #       - websecure
 
     to-mongodb:
       service: mongodb
-      rule: HostSNI(`almeling.ru`)
+      rule: HostSNI(`*`)
       entryPoints:
         - mongodb
-      tls: {}
+      tls:
+        certresolver: letsencrypt

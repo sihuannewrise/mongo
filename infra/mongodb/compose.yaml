@@ -5,8 +5,8 @@ services:
     container_name: mongodb
     hostname: mongodb
     restart: unless-stopped
-    # ports:
-    #   - 27017:27017
+    ports:
+      - 27017:27017
     command: 'mongod --config /data/configdb/mongod.conf'
     volumes:
       - /etc/localtime:/etc/localtime:ro

@@ -23,6 +23,9 @@ global:
   sendAnonymousUsage: false
 
 providers:
+  docker:
+    network: traefik-public
+    exposedByDefault: false
   file:
     directory: /etc/traefik/dynamic
     watch: true

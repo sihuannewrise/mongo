@@ -1,12 +1,12 @@
 ---
 tcp:
   services:
-    i7srv:
-      loadBalancer:
-        servers:
-          - address: i7srv:22
+    #   i7srv:
+    #     loadBalancer:
+    #       servers:
+    #         - address: i7srv:22
 
     mongodb:
       loadBalancer:
         servers:
-          - port: :27017
+          - address: i7srv:27017

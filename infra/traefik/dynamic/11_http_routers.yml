@@ -41,6 +41,6 @@ http:
       service: mongodb
       rule: Host(`mongodb.almeling.ru`)
       entryPoints:
-        - websecure
+        - mongodb
       tls:
         certResolver: letsencrypt

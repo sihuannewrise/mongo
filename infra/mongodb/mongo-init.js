@@ -10,4 +10,10 @@ db.createUser(
 		]
 	}
 );
-
+// db.getSiblingDB("myDatabase")
+// 	.createUser({
+// 		user: "myUser",
+// 		pwd: "myPassword",
+// 		roles: [{ role: "readWrite", db: "myDatabase" }],
+// 		passwordDigestor: "server"
+// 	});
