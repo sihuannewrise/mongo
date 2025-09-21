@@ -5,6 +5,8 @@
 entryPoints:
   mongodb:
     address: :27017
+  postgres:
+    address: :5432
   web:
     address: :80
     http:

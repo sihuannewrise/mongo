@@ -1,8 +1,9 @@
 ---
 services:
   postgres:
-    container_name: postgres
     image: postgres:16.1-alpine
+    container_name: postgres
+    hostname: postgres
     command:
       - "postgres"
       - "-c"
@@ -45,6 +46,14 @@ services:
       - /share/db/postgres/data:/var/lib/postgresql/data
     networks:
       - traefik-public
+    labels:
+      - traefik.enable=true
+      # - traefik.docker.network=backend
+      - traefik.tcp.routers.postgres.entrypoints=postgres
+      - traefik.tcp.routers.postgres.rule=HostSNI(`almeling.ru`)
+      - traefic.tcp.routers.postgres.tls=true
+      - traefik.tcp.routers.postgres.tls.certresolver=letsencrypt
+      - traefik.tcp.services.postgres.loadBalancer.server.port=5432
 
   pgadmin:
     container_name: pgadmin
