@@ -21,7 +21,7 @@ http:
         servers:
           - url: http://mongo-express:8081
 
-    mongodb:
+    pgadmin:
       loadBalancer:
         servers:
-          - url: http://mongodb:27017
+          - url: http://pgadmin:80
