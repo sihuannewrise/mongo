@@ -5,8 +5,6 @@ services:
     container_name: mongodb
     hostname: mongodb
     restart: unless-stopped
-    ports:
-      - 27017:27017
     command: 'mongod --config /data/configdb/mongod.conf'
     volumes:
       - /etc/localtime:/etc/localtime:ro
@@ -15,6 +13,13 @@ services:
     env_file: stack.env
     networks:
       traefik-public:
+    labels:
+      - traefik.enable=true
+      - traefik.tcp.routers.mongodb.entrypoints=mongodb
+      - traefik.tcp.routers.mongodb.rule=HostSNI(`mongodb.almeling.ru`)
+      - traefic.tcp.routers.mongodb.tls=true
+      - traefik.tcp.routers.mongodb.tls.certresolver=letsencrypt
+      - traefik.tcp.services.mongodb.loadBalancer.server.port=27017
 
   mongo-express:
     image: mongo-express:1.0.2

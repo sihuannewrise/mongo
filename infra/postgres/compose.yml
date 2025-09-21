@@ -1,4 +1,6 @@
 # sudo chown -R 5050:5050 /share/db/postgres/pgadmin_data/
+# check postgres is ready to accepot connection
+# pg_isready -d postgres -h pg.almeling.ru -p 5432 -U postgres
 ---
 services:
   postgres:
@@ -50,7 +52,7 @@ services:
     labels:
       - traefik.enable=true
       - traefik.tcp.routers.postgres.entrypoints=postgres
-      - traefik.tcp.routers.postgres.rule=HostSNI(`almeling.ru`)
+      - traefik.tcp.routers.postgres.rule=HostSNI(`pg.almeling.ru`)
       - traefic.tcp.routers.postgres.tls=true
       - traefik.tcp.routers.postgres.tls.certresolver=letsencrypt
       - traefik.tcp.services.postgres.loadBalancer.server.port=5432
