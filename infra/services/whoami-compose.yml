@@ -2,8 +2,8 @@
 services:
   whoami:
     image: traefik/whoami
-    container_name: whoami
-    hostname: whoami
+    container_name: $COMPOSE_PROJECT_NAME
+    hostname: $COMPOSE_PROJECT_NAME
     restart: unless-stopped
     volumes:
       - /etc/localtime:/etc/localtime:ro

@@ -37,14 +37,6 @@ http:
       tls:
         certResolver: letsencrypt
 
-    to-mongodb:
-      service: mongodb
-      rule: Host(`mongodb.almeling.ru`)
-      entryPoints:
-        - mongodb
-      tls:
-        certResolver: letsencrypt
-
     to-pgadmin:
       service: pgadmin
       rule: Host(`pgadmin.almeling.ru`)
