@@ -1,11 +1,11 @@
 import pymongo
 
-myclient = pymongo.MongoClient("mongodb://mongodbuser:aw3se4dr5@92.38.197.198:27017/")
+myclient = pymongo.MongoClient("mongodb://mongodbuser:aw3se4dr5@almeling.ru:27017/")
 
 mydb = myclient["mydatabase"]
 mycol = mydb["customers"]
 
-mydict = { "name": "Kiwi", "address": "Lenina 17A" }
+mydict = { "name": "Helen", "address": "Lenina 8A" }
 
 x = mycol.insert_one(mydict)
 print(x.inserted_id)
@@ -21,4 +21,3 @@ print(mycol)
 # docker exec -it mongodb mongosh -u <mongodbuser> -p <password>
 # db.auth({user: "mongodbuser", passwordPrompt()})
 # db.auth({user: "mongodbuser", pwd: "aw3se4dr5"})
-

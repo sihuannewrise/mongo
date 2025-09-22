@@ -16,9 +16,7 @@ services:
     labels:
       - traefik.enable=true
       - traefik.tcp.routers.mongodb.entrypoints=mongodb
-      - traefik.tcp.routers.mongodb.rule=HostSNI(`mongodb.almeling.ru`)
-      - traefic.tcp.routers.mongodb.tls=true
-      - traefik.tcp.routers.mongodb.tls.certresolver=letsencrypt
+      - traefik.tcp.routers.mongodb.rule=HostSNI(`*`)
       - traefik.tcp.services.mongodb.loadBalancer.server.port=27017
 
   mongo-express:
