@@ -3,3 +3,9 @@ http:
     auth:
       basicAuth:
         usersFile: /etc/traefik/usersfile
+
+    authelia:
+      forwardAuth:
+        address: http://authelia:9091/api/authz/forward-auth
+        trustForwardHeader: true
+        authResponseHeaders: Remote-User,Remote-Groups,Remote-Name,Remote-Email

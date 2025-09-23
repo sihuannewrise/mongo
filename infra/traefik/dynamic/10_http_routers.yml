@@ -25,7 +25,7 @@ http:
       entryPoints:
         - websecure
       middlewares:
-        - auth
+        - authelia
       tls:
         certResolver: letsencrypt
 
@@ -40,6 +40,14 @@ http:
     to-pgadmin:
       service: pgadmin
       rule: Host(`pgadmin.almeling.ru`)
+      entryPoints:
+        - websecure
+      tls:
+        certResolver: letsencrypt
+
+    to-authelia:
+      service: authelia
+      rule: Host(`auth.almeling.ru`)
       entryPoints:
         - websecure
       tls:

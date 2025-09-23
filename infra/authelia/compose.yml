@@ -1,18 +1,19 @@
 ---
 services:
   authelia:
-    image: docker.io/authelia/authelia:latest
+    image: authelia/authelia:latest
     container_name: authelia
     hostname: authelia
     restart: unless-stopped
     env_file: stack.env
     volumes:
+      - /etc/localtime:/etc/localtime:ro
       - /share/infra/auth/authelia/config:/config
       - /share/infra/auth/authelia/secrets:/secrets
     networks:
-      traefik-public:
+      auth:
 
 
 networks:
-  traefik-public:
-    external: true
+  auth:
+    driver: 'bridge'
