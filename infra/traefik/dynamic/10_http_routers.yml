@@ -27,7 +27,12 @@ http:
       middlewares:
         - authelia
       tls:
-        certResolver: letsencrypt
+        options: modern
+        certResolver: default
+        domains:
+          - main: almeling.ru
+            sans:
+              - "*.almeling.ru"
 
     to-mongo:
       service: mongo
@@ -51,4 +56,9 @@ http:
       entryPoints:
         - websecure
       tls:
-        certResolver: letsencrypt
+        options: modern
+        certResolver: default
+        domains:
+          - main: almeling.ru
+            sans:
+              - "*.almeling.ru"

@@ -31,10 +31,10 @@ session:
   cookies:
     - name: "authelia_session"
       domain: "almeling.ru" # Should match whatever your root protected domain is
-      authelia_url: "https://authelia.almeling.ru"
+      authelia_url: "https://auth.almeling.ru"
       expiration: "1 hour" # 1 hour
       inactivity: "5 minutes" # 5 minutes
-      default_redirection_url: "https://public.almeling.ru"
+      default_redirection_url: "https://www.almeling.ru"
 
 regulation:
   max_retries: 3

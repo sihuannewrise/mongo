@@ -11,17 +11,17 @@ services:
     security_opt:
       - no-new-privileges:true
     ports:
-      - 80:80
-      - 443:443
+      - 80:8080
+      - 443:8443
       - 5432:5432
       - 27017:27017
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - /etc/localtime:/etc/localtime:ro
       - /share/infra/traefik:/etc/traefik
+      - /share/infra/cert/storage:/certificates
     networks:
-      traefik-public:
-
+      traefik-public: {}
 
 networks:
   traefik-public:

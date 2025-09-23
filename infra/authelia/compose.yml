@@ -10,10 +10,10 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - /share/infra/auth/authelia/config:/config
       - /share/infra/auth/authelia/secrets:/secrets
+      - /share/infra/auth/authelia/cert:/certificates
     networks:
-      auth:
-
+      traefik-public: {}
 
 networks:
-  auth:
-    driver: 'bridge'
+  traefik-public:
+    external: true

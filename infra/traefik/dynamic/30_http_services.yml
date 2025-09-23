@@ -25,3 +25,9 @@ http:
       loadBalancer:
         servers:
           - url: http://pgadmin:80
+
+    authelia:
+      loadBalancer:
+        servers:
+          - url: http://authelia:9091
+        serversTransport: autheliaMutualTLS

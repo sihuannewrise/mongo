@@ -8,17 +8,29 @@ entryPoints:
   postgres:
     address: :5432
   web:
-    address: :80
+    address: :8080
     http:
       redirections:
         entryPoint:
           to: websecure
+    proxyProtocol:
+      insecure: false
+      trustedIPs: []
+    forwardedHeaders:
+      insecure: false
+      trustedIPs: []
   websecure:
-    address: :443
+    address: :8443
+    proxyProtocol:
+      insecure: false
+      trustedIPs: []
+    forwardedHeaders:
+      insecure: false
+      trustedIPs: []
 
 api:
   dashboard: true
-  insecure: true # Don't do that in production
+  insecure: false
 
 global:
   checkNewVersion: false
@@ -36,11 +48,33 @@ accessLog: {}
 
 log:
   level: DEBUG # or ERROR # set to INFO for production
+  filePath: /etc/traefik/traefik.log
 
-certificatesResolvers:
-  letsencrypt:
-    acme:
-      email: sihuannewrise@gmail.com
-      storage: /etc/traefik/acme.json
-      httpChallenge:
-        entryPoint: web
+# certificatesResolvers:
+#   letsencrypt:
+#     acme:
+#       email: sihuannewrise@gmail.com
+#       storage: /etc/traefik/acme.json
+#       httpChallenge:
+#         entryPoint: web
+tls:
+  options:
+    modern:
+      minVersion: "VersionTLS13"
+    intermediate:
+      minVersion: "VersionTLS12"
+      cipherSuites:
+        - "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256"
+        - "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256"
+        - "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384"
+        - "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384"
+        - "TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305"
+        - "TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305"
+
+serversTransports:
+  autheliaMutualTLS:
+    certificates:
+      - certFile: /certificates/traefik.public.crt
+        keyFile: /certificates/traefik.private.pem
+    rootCAs:
+      - /certificates/ca.public.crt
