@@ -1,0 +1,10 @@
+---
+users:
+  sihuan:
+    disabled: false
+    displayname: Sihuan
+    password: aw3se4dr5
+    email: sihuannewrise@gmail.com
+    groups:
+      - "admins"
+      - "dev"
