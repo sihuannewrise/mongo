@@ -5,6 +5,14 @@ services:
     container_name: $COMPOSE_PROJECT_NAME
     hostname: $COMPOSE_PROJECT_NAME
     restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          cpus: 2
+          memory: 512M
+        reservations:
+          cpus: 1
+          memory: 256M
     volumes:
       - /etc/localtime:/etc/localtime:ro
     networks:
