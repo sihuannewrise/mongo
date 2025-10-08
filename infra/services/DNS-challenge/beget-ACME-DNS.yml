@@ -1,0 +1,6 @@
+BEGET_USERNAME='i65095dp' \
+BEGET_PASSWORD='r&!%73ixmBOe' \
+lego --email sihuannewrise@gmail.com --dns beget --domains 'traefik.almeling.ru' --domains almeling.ru run
+
+
+lego --email="sihuannewrise@gmail.com" --domains="almeling.ru" --http run
