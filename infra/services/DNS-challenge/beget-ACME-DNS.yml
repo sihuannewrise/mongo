@@ -1,8 +1,14 @@
-BEGET_USERNAME='i65095dp' \
-BEGET_PASSWORD='r&!%73ixmBOe' \
-lego --email sihuannewrise@gmail.com --dns beget --domains 'traefik.almeling.ru' --domains almeling.ru run
+BEGET_USERNAME=i65095dp \
+BEGET_PASSWORD="qVx-u6g-9xg-J9D" \
+./dist/lego --email sihuannewrise@gmail.com --dns beget --domains '*.almeling.ru' --domains almeling.ru -s https://acme-staging-v02.api.letsencrypt.org/directory run
 
 
 lego --email="sihuannewrise@gmail.com" --domains="almeling.ru" --http run
 
-lego dnshelp -c selectelv2
+lego dnshelp -c beget
+
+https://api.beget.com/api/dns/getData?login=i65095dp&passwd=qVx-u6g-9xg-J9D&input_format=json&output_format=json&input_data={"fqdn":"beget.ru"}
+curl 'https://api.beget.com/api/dns/getData?login=i65095dp&passwd=qVx-u6g-9xg-J9D&input_format=json&output_format=json&input_data=%7B%22fqdn%22%3A%22beget.ru%22%7D+'
+
+{"status":"success","answer":{"status":"error","errors":[{"error_code":"METHOD_FAILED","error_text":"Failed to get DNS
+records"}]}}
