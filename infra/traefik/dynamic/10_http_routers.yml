@@ -24,15 +24,16 @@ http:
       rule: Host(`traefik.almeling.ru`)
       entryPoints:
         - websecure
-      middlewares:
-        - authelia
+      # middlewares:
+      #   - authelia
       tls:
-        options: modern
-        certResolver: default
-        domains:
-          - main: almeling.ru
-            sans:
-              - "*.almeling.ru"
+        ertResolver: letsencrypt
+        # options: modern
+        # certResolver: default
+        # domains:
+        #   - main: almeling.ru
+        #     sans:
+        #       - "*.almeling.ru"
 
     to-mongo:
       service: mongo

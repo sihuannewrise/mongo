@@ -4,3 +4,5 @@ lego --email sihuannewrise@gmail.com --dns beget --domains 'traefik.almeling.ru'
 
 
 lego --email="sihuannewrise@gmail.com" --domains="almeling.ru" --http run
+
+lego dnshelp -c selectelv2
