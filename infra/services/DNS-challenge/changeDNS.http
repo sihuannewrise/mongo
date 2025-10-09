@@ -1,0 +1,10 @@
+https://api.beget.com/api/dns/changeRecords?login=i65095dp&passwd=qVx-u6g-9xg-J9D&input_format=json&output_format=json&input_data=
+{"fqdn":"almeling.ru","records":{"TXT":[{"ttl":300,"txtdata":"v=spf1 redirect=beget.com"}],"MX":[{"ttl":300,"exchange":"mx1.beget.com.","preference":10},{"ttl":300,"exchange":"mx2.beget.com.","preference":20}],"A":[{"ttl":300,"address":"213.248.21.221"}],"DNS":[{"value":"ns2.beget.pro"},{"value":"ns1.beget.com"},{"value":"ns1.beget.pro"},{"value":"ns2.beget.com"}]}}
+
+# urlencoded input_data
+https://api.beget.com/api/dns/changeRecords?login=i65095dp&passwd=qVx-u6g-9xg-J9D&input_format=json&output_format=json&input_data=%7B%22fqdn%22%3A%22almeling.ru%22%2C%22records%22%3A%7B%22TXT%22%3A%5B%7B%22ttl%22%3A300%2C%22txtdata%22%3A%22v%3Dspf1+redirect%3Dbeget.com%22%7D%5D%2C%22MX%22%3A%5B%7B%22ttl%22%3A300%2C%22exchange%22%3A%22mx1.beget.com.%22%2C%22preference%22%3A10%7D%2C%7B%22ttl%22%3A300%2C%22exchange%22%3A%22mx2.beget.com.%22%2C%22preference%22%3A20%7D%5D%2C%22A%22%3A%5B%7B%22ttl%22%3A300%2C%22address%22%3A%22213.248.21.221%22%7D%5D%2C%22DNS%22%3A%5B%7B%22value%22%3A%22ns2.beget.pro%22%7D%2C%7B%22value%22%3A%22ns1.beget.com%22%7D%2C%7B%22value%22%3A%22ns1.beget.pro%22%7D%2C%7B%22value%22%3A%22ns2.beget.com%22%7D%5D%7D%7D
+
+
+
+{"fqdn":"xwick.ru","records":{"TXT":[{"ttl":300,"txtdata":"v=spf1 redirect=beget.com"}],"A":[{"ttl":300,"address":"213.248.21.221"}],"DNS":[{"value":"ns2.beget.pro"},{"value":"ns1.beget.com"},{"value":"ns1.beget.pro"},{"value":"ns2.beget.com"}]}}
+%7B%22fqdn%22%3A%22xwick.ru%22%2C%22records%22%3A%7B%22TXT%22%3A%5B%7B%22ttl%22%3A300%2C%22txtdata%22%3A%22v%3Dspf1+redirect%3Dbeget.com%22%7D%5D%2C%22A%22%3A%5B%7B%22ttl%22%3A300%2C%22address%22%3A%22213.248.21.221%22%7D%5D%2C%22DNS%22%3A%5B%7B%22value%22%3A%22ns2.beget.pro%22%7D%2C%7B%22value%22%3A%22ns1.beget.com%22%7D%2C%7B%22value%22%3A%22ns1.beget.pro%22%7D%2C%7B%22value%22%3A%22ns2.beget.com%22%7D%5D%7D%7D

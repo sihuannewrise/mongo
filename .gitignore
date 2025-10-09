@@ -130,6 +130,7 @@ ENV/
 env.bak/
 venv.bak/
 .lego
+lego/
 
 # Spyder project settings
 .spyderproject
