@@ -8,58 +8,37 @@ http:
       rule: Host(`almeling.ru`)
       entryPoints:
         - websecure
-      tls:
-        certResolver: letsencrypt
 
     to-portainer:
       service: portainer
       rule: Host(`portainer.almeling.ru`)
       entryPoints:
         - websecure
-      tls:
-        certResolver: letsencrypt
 
     to-traefik:
       service: traefik
       rule: Host(`traefik.almeling.ru`)
       entryPoints:
         - websecure
-      # middlewares:
-      #   - authelia
-      tls:
-        ertResolver: letsencrypt
-        # options: modern
-        # certResolver: default
-        # domains:
-        #   - main: almeling.ru
-        #     sans:
-        #       - "*.almeling.ru"
+      middlewares:
+        - auth
 
     to-mongo:
       service: mongo
       rule: Host(`mongo.almeling.ru`)
       entryPoints:
         - websecure
-      tls:
-        certResolver: letsencrypt
 
     to-pgadmin:
       service: pgadmin
       rule: Host(`pgadmin.almeling.ru`)
       entryPoints:
         - websecure
-      tls:
-        certResolver: letsencrypt
 
-    to-authelia:
-      service: authelia
-      rule: Host(`auth.almeling.ru`)
-      entryPoints:
-        - websecure
-      tls:
-        options: modern
-        certResolver: default
-        domains:
-          - main: almeling.ru
-            sans:
-              - "*.almeling.ru"
+    # to-authelia:
+    #   service: authelia
+    #   rule: Host(`auth.almeling.ru`)
+    #   entryPoints:
+    #     - websecure
+    #   tls:
+    #     options: modern
