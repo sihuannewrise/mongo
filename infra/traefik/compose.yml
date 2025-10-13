@@ -11,8 +11,8 @@ services:
     security_opt:
       - no-new-privileges:true
     ports:
-      - 80:8080
-      - 443:8443
+      - 80:80
+      - 443:443
       - 5432:5432
       - 27017:27017
     volumes:

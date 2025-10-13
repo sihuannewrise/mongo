@@ -35,10 +35,10 @@ http:
       entryPoints:
         - websecure
 
-    # to-authelia:
-    #   service: authelia
-    #   rule: Host(`auth.almeling.ru`)
-    #   entryPoints:
-    #     - websecure
-    #   tls:
-    #     options: modern
+    to-authelia:
+      service: authelia
+      rule: Host(`auth.almeling.ru`)
+      entryPoints:
+        - websecure
+      tls:
+        options: modern

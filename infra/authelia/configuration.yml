@@ -34,7 +34,7 @@ session:
       authelia_url: "https://auth.almeling.ru"
       expiration: "1 hour" # 1 hour
       inactivity: "5 minutes" # 5 minutes
-      default_redirection_url: "https://www.almeling.ru"
+      default_redirection_url: "https://almeling.ru"
 
 regulation:
   max_retries: 3
