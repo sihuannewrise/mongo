@@ -131,6 +131,8 @@ env.bak/
 venv.bak/
 .lego
 lego/
+acme.json
+
 
 # Spyder project settings
 .spyderproject
