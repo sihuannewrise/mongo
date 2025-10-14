@@ -1,16 +1,16 @@
 ---
 services:
   authelia:
-    image: authelia/authelia:latest
+    image: authelia/authelia:4.39.13
     container_name: authelia
     hostname: authelia
     restart: unless-stopped
     env_file: stack.env
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - /share/infra/auth/authelia/config:/config
-      - /share/infra/auth/authelia/secrets:/secrets
-      - /share/infra/cert/authelia:/certificates
+      - /share/infra/authelia/config:/config
+      - /share/infra/authelia/secrets:/secrets
+      # - /share/infra/cert/authelia:/certificates
     networks:
       traefik-public: {}
 

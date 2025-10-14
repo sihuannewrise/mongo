@@ -1,3 +1,5 @@
+## scp infra/traefik/dynamic/2*.yml root@almeling.ru:/share/infra/traefik/dynamic
+---
 http:
   middlewares:
     auth:
@@ -7,19 +9,16 @@ http:
     authelia:
       forwardAuth:
         address: http://authelia:9091/api/authz/forward-auth
-        ## The following commented line is for configuring the Authelia URL in the proxy. We strongly suggest this is
-        ## configured in the Session Cookies section of the Authelia configuration.
-        # address: 'http://authelia:9091/api/authz/forward-auth?authelia_url=https%3A%2F%2Fauth.almeling.ru%2F'
         trustForwardHeader: true
         authResponseHeaders:
           - Remote-User
           - Remote-Groups
           - Remote-Email
           - Remote-Name
-        tls:
-          ca: /certificates/ca.public.crt
-          cert: /certificates/traefik.public.crt
-          key: /certificates/traefik.private.pem
+        # tls:
+        #   ca: /certificates/ca.public.crt
+        #   cert: /certificates/traefik.public.crt
+        #   key: /certificates/traefik.private.pem
 
     authelia-basic:
       forwardAuth:
@@ -30,7 +29,7 @@ http:
           - Remote-Groups
           - Remote-Email
           - Remote-Name
-        tls:
-          ca: /certificates/ca.public.crt
-          cert: /certificates/traefik.public.crt
-          key: /certificates/traefik.private.pem
+        # tls:
+        #   ca: /certificates/ca.public.crt
+        #   cert: /certificates/traefik.public.crt
+        #   key: /certificates/traefik.private.pem

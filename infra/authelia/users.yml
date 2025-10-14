@@ -1,3 +1,4 @@
+# scp infra/authelia/users.yml root@almeling.ru:/share/infra/authelia/config
 ---
 users:
   sihuan:

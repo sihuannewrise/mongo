@@ -19,9 +19,9 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - /etc/localtime:/etc/localtime:ro
       - /share/infra/traefik:/etc/traefik
-      - /share/infra/cert/traefik:/certificates
+      # - /share/infra/cert/traefik:/certificates
     networks:
-      traefik-public: {}
+      traefik-public:
 
 networks:
   traefik-public:

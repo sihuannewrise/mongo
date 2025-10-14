@@ -22,15 +22,15 @@ entryPoints:
       tls:
         certResolver: letsencrypt
         domains:
-          - main: "almeling.ru"
+          - main: almeling.ru
             sans:
               - "*.almeling.ru"
-    proxyProtocol:
-      insecure: false
-      trustedIPs: []
-    forwardedHeaders:
-      insecure: false
-      trustedIPs: []
+    # proxyProtocol:
+    #   insecure: false
+    #   trustedIPs: []
+    # forwardedHeaders:
+    #   insecure: false
+    #   trustedIPs: []
 
 api:
   dashboard: true
@@ -52,7 +52,7 @@ providers:
 accessLog: {}
 
 log:
-  level: DEBUG # or ERROR # set to INFO for production
+  level: INFO # DEBUG or ERROR # set to INFO for production
   filePath: /etc/traefik/traefik.log
 
 certificatesResolvers:
@@ -77,10 +77,10 @@ tls:
         - "TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305"
         - "TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305"
 
-serversTransports:
-  autheliaMutualTLS:
-    certificates:
-      - certFile: /certificates/traefik.public.crt
-        keyFile: /certificates/traefik.private.pem
-    rootCAs:
-      - /certificates/ca.public.crt
+# serversTransports:
+#   autheliaMutualTLS:
+#     certificates:
+#       - certFile: /certificates/traefik.public.crt
+#         keyFile: /certificates/traefik.private.pem
+#     rootCAs:
+#       - /certificates/ca.public.crt
