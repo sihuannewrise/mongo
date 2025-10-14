@@ -40,5 +40,3 @@ http:
       rule: Host(`auth.almeling.ru`)
       entryPoints:
         - websecure
-      tls:
-        options: modern
