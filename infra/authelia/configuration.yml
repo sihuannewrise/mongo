@@ -7,7 +7,7 @@ log:
   level: debug
 
 totp:
-  issuer: authelia.com
+  issuer: almeling.ru
 
 # identity_validation:
 #   reset_password:
@@ -15,13 +15,13 @@ totp:
 
 authentication_backend:
   file:
-    path: "/config/users.yml"
+    path: /config/users.yml
 
 access_control:
   default_policy: deny
   rules:
-    # - domain: "public.almeling.ru"
-    #   policy: "bypass"
+    - domain: "pgadmin.almeling.ru"
+      policy: "bypass"
     - domain: "traefik.almeling.ru"
       policy: one_factor
     # - domain: "secure.almeling.ru"
@@ -32,10 +32,10 @@ session:
   cookies:
     - name: authelia_session
       domain: almeling.ru
-      authelia_url: "https://auth.almeling.ru"
+      authelia_url: https://auth.almeling.ru
       expiration: "1 hour"
       inactivity: "5 minutes"
-      default_redirection_url: "https://almeling.ru"
+      default_redirection_url: https://almeling.ru
 
 regulation:
   max_retries: 3
@@ -45,8 +45,8 @@ regulation:
 storage:
   # encryption_key: "you_must_generate_a_random_string_of_more_than_twenty_chars_and_configure_this"
   local:
-    path: "/config/db.sqlite3"
+    path: /config/db.sqlite3
 
 notifier:
   filesystem:
-    filename: "/config/notification.txt"
+    filename: /config/notification.txt
