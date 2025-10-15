@@ -15,10 +15,10 @@ http:
           - Remote-Groups
           - Remote-Email
           - Remote-Name
-        tls: {}
-        #   ca: /certificates/ca.public.crt
-        #   cert: /certificates/traefik.public.crt
-        #   key: /certificates/traefik.private.pem
+        tls:
+          ca: /certificates/almeling.ru.issuer.crt
+          cert: /certificates/almeling.ru.crt
+          key: /certificates/almeling.ru.key
 
     authelia-basic:
       forwardAuth:
@@ -29,7 +29,7 @@ http:
           - Remote-Groups
           - Remote-Email
           - Remote-Name
-        tls: {}
-        #   ca: /certificates/ca.public.crt
-        #   cert: /certificates/traefik.public.crt
-        #   key: /certificates/traefik.private.pem
+        tls:
+          ca: /certificates/almeling.ru.issuer.crt
+          cert: /certificates/almeling.ru.crt
+          key: /certificates/almeling.ru.key

@@ -20,7 +20,7 @@ entryPoints:
     address: :443
     http:
       tls:
-        certResolver: letsencrypt
+        # certResolver: default
         domains:
           - main: almeling.ru
             sans:
@@ -65,32 +65,32 @@ log:
   format: json
   # maxSize: 10 # default 100mb
 
-certificatesResolvers:
-  letsencrypt:
-    acme:
-      email: sihuannewrise@gmail.com
-      storage: /certificates/acme.json
-      dnsChallenge:
-        provider: selectelv2
+# certificatesResolvers:
+#   letsencrypt:
+#     acme:
+#       email: sihuannewrise@gmail.com
+#       storage: /certificates/acme.json
+#       dnsChallenge:
+#         provider: selectelv2
 
-# tls:
-#   options:
-#     modern:
-#       minVersion: 'VersionTLS13'
-#     intermediate:
-#       minVersion: 'VersionTLS12'
-#       cipherSuites:
-#         - 'TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256'
-#         - 'TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256'
-#         - 'TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384'
-#         - 'TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384'
-#         - 'TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305'
-#         - 'TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305'
+tls:
+  options:
+    modern:
+      minVersion: 'VersionTLS13'
+    intermediate:
+      minVersion: 'VersionTLS12'
+      cipherSuites:
+        - 'TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256'
+        - 'TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256'
+        - 'TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384'
+        - 'TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384'
+        - 'TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305'
+        - 'TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305'
 
-# serversTransports:
-#     autheliaMutualTLS:
-#       certificates:
-#         - certFile: '/certificates/traefik.public.crt'
-#           keyFile: '/certificates/traefik.private.pem'
-#       rootCAs:
-#         - '/certificates/ca.public.crt'
+serversTransports:
+    autheliaMutualTLS:
+      certificates:
+        - certFile: /certificates/almeling.ru.crt
+          keyFile: /certificates/almeling.ru.key
+      rootCAs:
+        - /certificates/almeling.ru.issuer.crt

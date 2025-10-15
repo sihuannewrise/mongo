@@ -24,7 +24,7 @@ http:
         - authelia
       # tls:
       #   options: modern@file
-      #   certResolver: letsencrypt
+      #   certResolver: default
       #   domains:
       #     - main: almeling.ru
       #       sans:
