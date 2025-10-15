@@ -1,0 +1,13 @@
+# vi /etc/logrotate.d/traefik
+# logrotate /etc/logrotate.conf --debug
+# sudo logrotate /etc/logrotate.conf
+
+/share/infra/logs/traefik/*.log {
+  size 10M
+  rotate 5
+  missingok
+  notifempty
+  postrotate
+    docker kill --signal="USR1" traefik
+  endscript
+}

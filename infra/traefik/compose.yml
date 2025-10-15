@@ -16,10 +16,11 @@ services:
       - 5432:5432
       - 27017:27017
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock:ro
       - /etc/localtime:/etc/localtime:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /share/infra/cert/traefik:/certificates
       - /share/infra/traefik:/etc/traefik
-      # - /share/infra/cert/traefik:/certificates
+      - /share/infra/logs/traefik:/logs
     networks:
       traefik-public:
 

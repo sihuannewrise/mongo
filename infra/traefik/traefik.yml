@@ -35,7 +35,7 @@ entryPoints:
 api:
   dashboard: true
   insecure: false
-  # insecure: true # Don't do that in production
+  # insecure: true # Don't do this in production
 
 global:
   checkNewVersion: false
@@ -49,38 +49,26 @@ providers:
     directory: /etc/traefik/dynamic
     watch: true
 
-accessLog: {}
+accessLog:
+  format: json
+  filePath: /logs/traefik_access.log
+  filters:
+    statusCodes:
+      - "200"
+      - "300-302"
+    retryAttempts: true
+    minDuration: 10ms
 
 log:
-  level: INFO # DEBUG or ERROR # set to INFO for production
-  filePath: /etc/traefik/traefik.log
+  level: INFO # DEBUG or ERROR set to INFO for production
+  filePath: /logs/traefik.log
+  format: json
+  # maxSize: 10 # default 100mb
 
 certificatesResolvers:
   letsencrypt:
     acme:
       email: sihuannewrise@gmail.com
-      storage: /etc/traefik/acme.json
+      storage: /certificates/acme.json
       dnsChallenge:
         provider: selectelv2
-
-tls:
-  options:
-    modern:
-      minVersion: "VersionTLS13"
-    intermediate:
-      minVersion: "VersionTLS12"
-      cipherSuites:
-        - "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256"
-        - "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256"
-        - "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384"
-        - "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384"
-        - "TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305"
-        - "TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305"
-
-# serversTransports:
-#   autheliaMutualTLS:
-#     certificates:
-#       - certFile: /certificates/traefik.public.crt
-#         keyFile: /certificates/traefik.private.pem
-#     rootCAs:
-#       - /certificates/ca.public.crt
