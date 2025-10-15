@@ -15,7 +15,7 @@ http:
           - Remote-Groups
           - Remote-Email
           - Remote-Name
-        # tls:
+        tls: {}
         #   ca: /certificates/ca.public.crt
         #   cert: /certificates/traefik.public.crt
         #   key: /certificates/traefik.private.pem
@@ -29,7 +29,7 @@ http:
           - Remote-Groups
           - Remote-Email
           - Remote-Name
-        # tls:
+        tls: {}
         #   ca: /certificates/ca.public.crt
         #   cert: /certificates/traefik.public.crt
         #   key: /certificates/traefik.private.pem
