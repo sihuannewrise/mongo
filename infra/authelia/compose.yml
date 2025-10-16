@@ -12,7 +12,7 @@ services:
       - /share/infra/authelia/secrets:/secrets
       - /share/infra/cert/authelia:/certificates
     networks:
-      traefik-public: {}
+      traefik-public:
 
 networks:
   traefik-public:
