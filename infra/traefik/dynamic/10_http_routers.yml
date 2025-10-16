@@ -1,4 +1,4 @@
-## scp infra/traefik/dynamic/10*.yml root@almeling.ru:/share/infra/traefik/dynamic
+## scp infra/traefik/dynamic/1*.yml root@almeling.ru:/share/infra/traefik/dynamic
 ## scp infra/traefik/dynamic/*.yml root@almeling.ru:/share/infra/traefik/dynamic
 ---
 http:
@@ -8,27 +8,26 @@ http:
       rule: Host(`almeling.ru`)
       entryPoints:
         - websecure
+      tls:
+        options: modern@file
 
     to-portainer:
       service: portainer
       rule: Host(`portainer.almeling.ru`)
       entryPoints:
         - websecure
+      tls:
+        options: modern@file
 
     to-traefik:
       service: traefik
       rule: Host(`traefik.almeling.ru`)
       entryPoints:
         - websecure
-      middlewares:
-        - authelia
-      # tls:
-      #   options: modern@file
-      #   certResolver: default
-      #   domains:
-      #     - main: almeling.ru
-      #       sans:
-      #         - "*.almeling.ru"
+      # middlewares:
+      #   - authelia
+      tls:
+        options: modern@file
 
     to-mongo:
       service: mongo

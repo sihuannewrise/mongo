@@ -31,4 +31,4 @@ http:
       loadBalancer:
         servers:
           - url: http://authelia:9091
-        serversTransport: autheliaMutualTLS
+        # serversTransport: autheliaMutualTLS
