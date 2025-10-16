@@ -1,2 +1,7 @@
+<!--
+htpasswd -nb admin "aw3se4dr5" | sed -e 's/\$/\$\$/g'
+admin:$$apr1$$fo659U0S$$SjHXaYZUIo2..RoapIJTV/
+-->
 ## scp infra/traefik/usersfile root@almeling.ru:/share/infra/traefik
 sihuan:$2a$12$hSuqGSo/wIYE8.U5GXqoXuonRkzwMj7CocubTSX9LE4/bc1HKtgIi
+admin:$$apr1$$fo659U0S$$SjHXaYZUIo2..RoapIJTV/

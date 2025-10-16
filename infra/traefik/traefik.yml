@@ -35,6 +35,8 @@ entryPoints:
         - "172.16.0.0/14"
         - "192.168.0.0/16"
         - "fc00::/7"
+  # metrics:
+  #   address: :8082
 
 api:
   dashboard: true
@@ -77,6 +79,8 @@ certificatesResolvers:
       httpChallenge:
         entryPoint: web
 
+metrics:
+  prometheus: {}
 # serversTransports:
 #     autheliaMutualTLS:
 #       certificates:
