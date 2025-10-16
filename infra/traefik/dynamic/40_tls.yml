@@ -1,19 +1,21 @@
-## scp infra/traefik/dynamic/4*.yml root@almeling.ru:/share/infra/traefik/dynamic
----
 tls:
   stores:
     default:
       defaultCertificate:
         certFile: /certificates/almeling.ru.crt
         keyFile: /certificates/almeling.ru.key
-      defaultGeneratedCert:
-        resolver: letsencrypt
-        domain:
-          main: almeling.ru
-          sans:
-            - "*.almeling.ru"
+      # defaultGeneratedCert:
+      #   resolver: selectelv2
+      #   domain:
+      #     main: almeling.ru
+      #     sans:
+      #       - "mongo.almeling.ru"
+      #       - "pg.almeling.ru"
+      #       - "pgadmin.almeling.ru"
+      #       - "portainer.almeling.ru"
+      #       - "traefik.almeling.ru"
   options:
-    modern:
+    default:
       minVersion: VersionTLS13
     intermediate:
       minVersion: VersionTLS12

@@ -58,7 +58,7 @@ services:
       - traefik.tcp.services.postgres.loadBalancer.server.port=5432
 
   pgadmin:
-    image: dpage/pgadmin4:9.8
+    image: dpage/pgadmin4:9.9
     container_name: pgadmin
     hostname: pgadmin
     depends_on:
