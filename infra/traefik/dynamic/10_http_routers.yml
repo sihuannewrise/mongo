@@ -8,6 +8,12 @@ http:
       entryPoints:
         - websecure
 
+    to-authelia:
+      service: authelia
+      rule: Host(`auth.almeling.ru`)
+      entryPoints:
+        - websecure
+
     to-traefik:
       service: traefik
       rule: Host(`traefik.almeling.ru`)
@@ -34,8 +40,8 @@ http:
       entryPoints:
         - websecure
 
-    to-authelia:
-      service: authelia
-      rule: Host(`auth.almeling.ru`)
+    to-selectel:
+      service: selectel
+      rule: Host(`selectel.almeling.ru`)
       entryPoints:
         - websecure

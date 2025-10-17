@@ -31,3 +31,9 @@ http:
         servers:
           - url: http://authelia:9091
         # serversTransport: autheliaMutualTLS
+
+    selectel:
+      loadBalancer:
+        servers:
+          address: "85.119.149.1:443"
+          tls: {}

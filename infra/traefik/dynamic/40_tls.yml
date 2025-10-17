@@ -9,10 +9,12 @@ tls:
       #   domain:
       #     main: almeling.ru
       #     sans:
+      #       - "auth.almeling.ru"
       #       - "mongo.almeling.ru"
       #       - "pg.almeling.ru"
       #       - "pgadmin.almeling.ru"
       #       - "portainer.almeling.ru"
+      #       - "selectel.almeling.ru"
       #       - "traefik.almeling.ru"
   options:
     default:
