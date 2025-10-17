@@ -28,6 +28,10 @@ access_control:
       policy: one_factor
 
 session:
+  redis:
+    host: redis
+    port: 6379
+    username: auth
   cookies:
     - name: authelia_session
       domain: almeling.ru
@@ -46,7 +50,7 @@ storage:
     address: tcp://postgres:5432
     database: auth
     username: auth
-    schema: "public"
+    schema: public
     timeout: "5 seconds"
 
 notifier:
