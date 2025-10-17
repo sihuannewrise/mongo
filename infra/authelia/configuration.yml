@@ -21,11 +21,11 @@ access_control:
   default_policy: deny
   rules:
     - domain: almeling.ru
+      policy: one_factor    # bypass or two_factor
+    - domain: pgadmin.almeling.ru
       policy: one_factor
     - domain: traefik.almeling.ru
-      policy: one_factor   # bypass
-    # - domain: "secure.almeling.ru"
-    #   policy: "two_factor"
+      policy: one_factor
 
 session:
   cookies:
@@ -42,8 +42,12 @@ regulation:
   ban_time: "5 minutes"
 
 storage:
-  local:
-    path: /config/db.sqlite3
+  postgres:
+    address: tcp://postgres:5432
+    database: auth
+    username: auth
+    schema: "public"
+    timeout: "5 seconds"
 
 notifier:
   filesystem:

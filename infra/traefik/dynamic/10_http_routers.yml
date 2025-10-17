@@ -35,12 +35,16 @@ http:
       rule: Host(`mongo.almeling.ru`)
       entryPoints:
         - websecure
+      middlewares:
+        - authelia
 
     to-pgadmin:
       service: pgadmin
       rule: Host(`pgadmin.almeling.ru`)
       entryPoints:
         - websecure
+      middlewares:
+        - authelia
 
     to-selectel:
       service: selectel
