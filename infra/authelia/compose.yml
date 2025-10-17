@@ -10,7 +10,6 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - /share/infra/authelia/config:/config
       - /share/infra/authelia/secrets:/secrets
-      - /share/infra/cert/authelia:/certificates
     networks:
       traefik-public:
 

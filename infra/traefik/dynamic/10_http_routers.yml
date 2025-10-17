@@ -21,6 +21,8 @@ http:
       rule: Host(`traefik.almeling.ru`)
       entryPoints:
         - websecure
+      middlewares:
+        - authelia
 
     to-portainer:
       service: portainer

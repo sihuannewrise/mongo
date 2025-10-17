@@ -41,7 +41,6 @@ entryPoints:
 api:
   dashboard: true
   insecure: false
-  # insecure: true # Don't do this in production
 
 global:
   checkNewVersion: false
@@ -66,10 +65,10 @@ accessLog:
     minDuration: 10ms
 
 log:
-  level: INFO # DEBUG or ERROR - set to INFO for production
+  level: INFO
   filePath: /logs/traefik.log
   format: json
-  # maxSize: 10 # default 100mb
+  # maxSize: 10 # default 100mb (here logs managed through logrotate.d)
 
 certificatesResolvers:
   letsencrypt:
@@ -81,10 +80,3 @@ certificatesResolvers:
 
 metrics:
   prometheus: {}
-# serversTransports:
-#     autheliaMutualTLS:
-#       certificates:
-#         - certFile: /certificates/almeling.ru.crt
-#           keyFile: /certificates/almeling.ru.key
-#       rootCAs:
-#         - /certificates/almeling.ru.issuer.crt
