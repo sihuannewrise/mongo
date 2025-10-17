@@ -1,0 +1,14 @@
+authorityKeyIdentifier=keyid,issuer
+basicConstraints=CA:FALSE
+keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
+subjectAltName = @alt_names
+[alt_names]
+DNS.1 = localhost
+DNS.2 = knh.cloud
+DNS.3 = auth.knh.cloud
+DNS.4 = nocodb.knh.cloud
+DNS.5 = pihole.knh.cloud
+DNS.6 = pg.knh.cloud
+DNS.7 = pgadmin.knh.cloud
+DNS.8 = portainer.knh.cloud
+DNS.9 = traefik.knh.cloud
