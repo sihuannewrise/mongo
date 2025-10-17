@@ -33,6 +33,7 @@ access_control:
 
 session:
   # secret: "insecure_session_secret"
+
   cookies:
     - name: authelia_session
       domain: almeling.ru
