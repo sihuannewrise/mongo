@@ -1,7 +1,7 @@
 # scp infra/authelia/configuration.yml root@almeling.ru:/share/infra/authelia/config
 ---
 server:
-  address: tcp://0.0.0.0:9091
+  address: tcp://authelia:9091
   endpoints:
     authz:
       forward-auth:
@@ -23,6 +23,8 @@ access_control:
     - domain: auth.almeling.ru
       policy: bypass
     - domain: almeling.ru
+      policy: one_factor
+    - domain: mongo.almeling.ru
       policy: one_factor
     - domain: pgadmin.almeling.ru
       policy: one_factor
