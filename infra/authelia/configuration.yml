@@ -20,8 +20,10 @@ authentication_backend:
 access_control:
   default_policy: deny
   rules:
+    - domain: auth.almeling.ru
+      policy: bypass
     - domain: almeling.ru
-      policy: one_factor # bypass or two_factor
+      policy: one_factor
     - domain: pgadmin.almeling.ru
       policy: one_factor
     - domain: traefik.almeling.ru
