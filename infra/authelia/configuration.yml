@@ -78,9 +78,9 @@ notifier:
     address: smtp://smtp.mail.selcloud.ru:1126
     timeout: 5s
     username: 5969
-    sender: "Almeling <admin@almeling.ru>"
+    sender: "Almeling.ru <no-reply@almeling.ru>"
     identifier: i7srv
-    subject: "[Almeling] {title}"
+    subject: "Almeling HelpDesk - {title}"
     startup_check_address: test@almeling.ru
     disable_require_tls: false
     disable_starttls: false
