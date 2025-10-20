@@ -71,5 +71,17 @@ storage:
     timeout: "5 seconds"
 
 notifier:
-  filesystem:
-    filename: /config/notification.txt
+  # filesystem:
+  #   filename: /config/notification.txt
+  disable_startup_check: false
+  smtp:
+    address: smtp://smtp.mail.selcloud.ru:1126
+    timeout: 5s
+    username: 5969
+    sender: "Almeling <admin@almeling.ru>"
+    identifier: i7srv
+    subject: "[Almeling] {title}"
+    startup_check_address: test@almeling.ru
+    disable_require_tls: false
+    disable_starttls: false
+    disable_html_emails: false
